@@ -1,4 +1,4 @@
-﻿/* Menu Styling */
+﻿/* Menu  */
 .menu {
     background-color: black;
     padding: 10px;
@@ -39,10 +39,10 @@
     }
 
 .active-link {
-    background-color: darkblue;
+    background-color: mediumpurple;
 }
 
-/* Responsive Design: Stack items when the screen is small */
+
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
@@ -68,20 +68,82 @@
     border-radius: 5px;
 }
 
-h1, h2 {
-    color: darkgreen;
+    /* Flex container for the image and text */
+    .container .FirstBlock {
+        display: flex;
+        align-items: center; /* Vertically center the items */
+    }
+
+    /* Flex container for the image and text */
+    .container .SecondBlock {
+        display: flex;
+        justify-content: space-between; /* Spaces out the text and image */
+        align-items: center; /* Vertically center the items */
+    }
+
+    .container img {
+        max-width: 200px; /* Limit the image size */
+        margin-right: 20px; /* Adds space between the image and the text */
+    }
+
+    .container p {
+        font-size: 1.1em;
+        color: #333;
+        line-height: 1.6;
+        max-width: 600px;
+      
 }
 
 img {
     width: 150px;
-    height: auto;
+    height: Auto;
     display: block;
-    margin: 10px auto;
+    margin: 10px;
     border-radius: 10px;
-    border: 3px solid darkgreen;
+   
 }
 
 ul {
     list-style-type: square;
     padding-left: 20px;
 }
+
+
+/* Modules*/
+
+.modules {
+    max-width: 600px;
+}
+
+.modules-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.column {
+    width: 45%;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+
+/*Mirror Image*/
+
+img {
+    transition: transform 0.5s ease-in-out;
+}
+
+    img:hover {
+        transform: scaleX(-1);
+    }

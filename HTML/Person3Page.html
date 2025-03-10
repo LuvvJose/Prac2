@@ -3,85 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Content/StyleSheet1.css">  <!-- External CSS reference -->
     <title>Person 3 - John Doe</title>
-    <style>
-        /* Menu Styling */
-        .menu {
-            background-color: black;
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .nav {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            justify-content: center;
-        }
-
-            .nav li {
-                margin-right: 10px;
-                padding-right: 10px;
-                border-right: 1px solid white;
-            }
-
-                .nav li:last-child {
-                    border-right: none;
-                }
-
-        .menu-link {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: inline-block;
-            text-align: center;
-        }
-
-            .menu-link:hover {
-                background-color: grey;
-            }
-
-        .active-link {
-            background-color: darkblue;
-        }
-
-        /* Responsive Design: Stack items when screen is small */
-        @media (max-width: 768px) {
-            .nav {
-                flex-direction: column;
-                width: 100%;
-            }
-
-                .nav li {
-                    margin: 5px 0;
-                    padding: 5px 0;
-                }
-        }
-
-        /* Styling for the page content */
-        .person-info {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-            .person-info img {
-                width: 200px;
-                height: 200px;
-                border-radius: 50%;
-            }
-    </style>
 </head>
 <body>
 
-    <!-- Menu with 8 Links -->
+
     <div class="menu">
         <ul class="nav">
-            <li><a href="index.html" class="menu-link" id="link1">Main Menu</a></li>
-            <li><a href="@Url.Action("PeopleList","People" )" class="btn btn-primary" target="_blank">List of People</a></li>
+            <li><a href="/Home/SimpleStart" class="menu-link" id="link1">Main Menu</a></li>
+            <li><a href="/People/PeopleList" class="menu-link" id="link3">People List</a></li>
             <li><a href="/HTML/Person1Page.html" class="menu-link" id="link3">Person 01</a></li>
             <li><a href="/HTML/Person2Page.html" class="menu-link" id="link4">Person 02</a></li>
             <li><a href="/HTML/Person3Page.html" class="menu-link" id="link5">Person 03</a></li>
@@ -91,31 +22,56 @@
         </ul>
     </div>
 
-    <!-- Person Information -->
-    <div class="person-info">
-        <h1>John Doe</h1>
-        <img src="~/Images/jose.jpg" alt="Jose's Picture">
-        <h2>Background</h2>
-        <p>Jose is a Computer Science student...</p>
 
+
+    <!-- Biography and Background -->
+    <div class="container">
+        <h2>Biography and Background</h2>
+        <div class="FirstBlock">
+            <img src="Images/peter-parker-Cropped.jpg">
+            <p>John was born in Gauteng, and went to school in Dorrito College. He studies Criminology because there is criminals who should be in jail but are walking free.</p>
+        </div>
+    </div>
+
+    <!-- Hobbies -->
+    <div class="container">
         <h2>Hobbies</h2>
-        <ul>
-            <li>Reading</li>
-            <li>Playing Chess</li>
-            <li>Gaming</li>
-        </ul>
+        <div class="SecondBlock">
+            <p>John plays a vareiety of sports in his free time.</p>
+            <img src="Images/sports.jpg">
+        </div>
+    </div>
 
-        <h2>Modules</h2>
-        <ul>
-            <li>Web Development</li>
-            <li>Database Management</li>
-            <li>Software Engineering</li>
-        </ul>
+    <!-- Modules -->
+
+    <div class="container">
+
+        <div class="modules">
+            <h2>Modules</h2>
+
+            <div class="modules-container">
+                <div class="column">
+                    <h3>Modules Semester 1</h3>
+                    <ul>
+                        <li>CRI 11</li>
+                        <li>CRI 12</li>
+                        <li>CRI 13</li>
+</ul>
+                </div>
+                <div class="column">
+                    <h3>Modules Semester 2</h3>
+                    <ul>
+                        <li>CRI 21</li>
+                        <li>CRI 22</li>
+                        <li>CRI 23</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- JavaScript to manage active link and dynamic behavior -->
     <script>
-// Manage active link
         const links = document.querySelectorAll('.menu-link');
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -126,7 +82,6 @@
             });
         });
 
-        // Optionally, if you need to handle active state on page load based on the URL
         document.addEventListener('DOMContentLoaded', () => {
             const currentUrl = window.location.href;
             links.forEach(link => {

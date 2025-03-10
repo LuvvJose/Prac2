@@ -20,11 +20,6 @@ namespace Prac2.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Display(Name = "Current Age")]
-        public int Age { get; set; } = 0;
-
-        [Display(Name = "Living Status")]
-        public bool IsAlive { get; set; } = true;
 
         [Display(Name = "Profile Link")]
         public string MyLink { get; set; }
