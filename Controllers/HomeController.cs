@@ -26,5 +26,11 @@ namespace Prac2.Controllers
 
             return View();
         }
+
+        public ActionResult SimpleStart()
+        {
+            return View();
+        }
+
     }
 }

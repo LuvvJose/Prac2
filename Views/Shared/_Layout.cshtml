@@ -10,20 +10,36 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <!-- Other menu items -->
+                    <li>@Html.ActionLink("Simple Starting Sample", "SimpleStart", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+
+                    <!-- List of People Menu Item with Sub-menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            List of People
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="@Url.Action("PeopleList", "People")">Complete List</a>
+
+                            <a class="dropdown-item" href="@Url.Content("~/HTML/Person1Page.html")">Person 1</a>
+                            <a class="dropdown-item" href="@Url.Content("~/HTML/Person2Page.html")">Person 2</a>
+                            <a class="dropdown-item" href="@Url.Content("~/HTML/Person3Page.html")">Person 3</a>
+                            <a class="dropdown-item" href="@Url.Content("~/HTML/Person4Page.html")">Person 4</a>
+                            <a class="dropdown-item" href="@Url.Content("~/HTML/Person5Page.html")">Person 5</a>
+
+
+
+
+                            <!-- Add other sub-menu items here if necessary -->
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -32,8 +48,14 @@
         </footer>
     </div>
 
+    <!-- Ensure these scripts are included for Bootstrap dropdown to work -->
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
+    <!-- Include Bootstrap JS and jQuery if the bundles are not working -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
